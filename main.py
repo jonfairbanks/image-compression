@@ -36,7 +36,7 @@ def lossless_compression(img, img_format):
 
     # Save the image with optimized settings (lossless compression)
     compressed_buffer = io.BytesIO()
-    img.save(compressed_buffer, format=img_format, optimize=True)
+    img.save(compressed_buffer, format=img_format, optimize=True, quality=10)
     compressed_size = len(compressed_buffer.getvalue())
 
     return compressed_buffer, original_size - compressed_size
